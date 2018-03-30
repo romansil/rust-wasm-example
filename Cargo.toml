@@ -1,0 +1,10 @@
+[package]
+name = "add"
+version = "0.1.0"
+authors = ["Roman Silberschneider <roman.silberschneider@gmail.com>"]
+
+[lib]
+path = "src/lib.rs"
+crate-type = ["cdylib"]
+
+[dependencies]

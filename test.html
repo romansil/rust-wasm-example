@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body class="container">
+
+      <button id="run-wasm">Run</button>
+
+      <script>
+        var button = document.getElementById("run-wasm");
+        button.addEventListener("click", function(e) {
+                fetch('add.wasm')
+            .then(response => response.arrayBuffer())
+            .then(bytes => WebAssembly.instantiate(bytes, {}))
+            .then(results => {
+                alert(results.instance.exports.add_one(41));
+            });
+        });
+      </script>
+
+  </body>
+</html>
